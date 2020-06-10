@@ -60,7 +60,7 @@ public class GoldModel extends GameModel {
 			new Color(255, 255, 0), 2.0);
 
 	
-			
+			//0 0 255
 	/** Graphical representation of the collector */
 	private static final GameTile COLLECTOR_TILE = new RoundTile(Color.BLACK,
 			Color.RED, 2.0);
@@ -122,7 +122,6 @@ public class GoldModel extends GameModel {
 			newCoinPos = new Position((int) (Math.random() * size.width),
 										(int) (Math.random() * size.height));
 		} while (!isPositionEmpty(newCoinPos));
-
 		// ... add a new coin to the empty tile.
 		setGameboardState(newCoinPos, COIN_TILE);
 		this.coins.add(newCoinPos);
@@ -198,6 +197,7 @@ public class GoldModel extends GameModel {
 		// Remove the coin at the new collector position (if any)
 		if (this.coins.remove(this.collectorPos)) {
 			this.score+=3;
+
 		}
 
 		// Check if all coins are found
